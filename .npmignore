@@ -1,0 +1,6 @@
+src/
+tests/
+examples/
+.github/
+node_modules/
+.env

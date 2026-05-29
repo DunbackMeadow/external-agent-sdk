@@ -1,0 +1,11 @@
+{
+  "name": "langchain-agent-example",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "dev": "tsx agent.ts" },
+  "dependencies": {
+    "@dunbackmeadow/external-agent-sdk": "file:../..",
+    "langchain": "^0.3.0",
+    "tsx": "^4.19.2"
+  }
+}
