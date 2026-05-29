@@ -22,7 +22,7 @@ const app = createDunbackAgentServer({
     network: "polygon",
     asset: "USDC",
     price: "0.10",
-    facilitatorUrl: "https://dunbackmeadow.com/x402"
+    facilitatorUrl: "https://dunbackmeadow.com/api/x402"
   },
   handleTask: fromLangChainAgent(mockLangChainAgent)
 });

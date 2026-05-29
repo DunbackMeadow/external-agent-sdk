@@ -46,9 +46,9 @@ const app = createDunbackAgentServer({
     return {
       status: "success",
       message: `You asked: ${ctx.userInput}`,
-      result: { taskId: ctx.taskId }
+      result: { taskId: ctx.taskId },
     };
-  }
+  },
 });
 
 app.listen(3000, () => {
@@ -105,7 +105,10 @@ error
 ## LangChain / LangGraph adapter
 
 ```ts
-import { createDunbackAgentServer, fromLangChainAgent } from "@dunbackmeadow/external-agent-sdk";
+import {
+  createDunbackAgentServer,
+  fromLangChainAgent,
+} from "@dunbackmeadow/external-agent-sdk";
 
 const app = createDunbackAgentServer({
   agentName: "LangChain Job Search Agent",
@@ -117,16 +120,19 @@ const app = createDunbackAgentServer({
     network: "polygon",
     asset: "USDC",
     price: "0.10",
-    facilitatorUrl: "https://dunbackmeadow.com/x402"
+    facilitatorUrl: "https://dunbackmeadow.com/api/x402",
   },
-  handleTask: fromLangChainAgent(myLangChainAgent)
+  handleTask: fromLangChainAgent(myLangChainAgent),
 });
 ```
 
 ## AutoGPT adapter
 
 ```ts
-import { createDunbackAgentServer, fromAutoGPTTrigger } from "@dunbackmeadow/external-agent-sdk";
+import {
+  createDunbackAgentServer,
+  fromAutoGPTTrigger,
+} from "@dunbackmeadow/external-agent-sdk";
 
 createDunbackAgentServer({
   agentName: "AutoGPT Workflow Agent",
@@ -137,15 +143,18 @@ createDunbackAgentServer({
   payment: { method: "none" },
   handleTask: fromAutoGPTTrigger({
     triggerUrl: "https://developer.com/autogpt/trigger",
-    apiKey: process.env.AUTOGPT_API_KEY
-  })
+    apiKey: process.env.AUTOGPT_API_KEY,
+  }),
 }).listen(3000);
 ```
 
 ## OpenClaw adapter
 
 ```ts
-import { createDunbackAgentServer, fromOpenClawEndpoint } from "@dunbackmeadow/external-agent-sdk";
+import {
+  createDunbackAgentServer,
+  fromOpenClawEndpoint,
+} from "@dunbackmeadow/external-agent-sdk";
 
 createDunbackAgentServer({
   agentName: "OpenClaw Coding Agent",
@@ -155,8 +164,8 @@ createDunbackAgentServer({
   requirePayment: false,
   payment: { method: "none" },
   handleTask: fromOpenClawEndpoint({
-    endpoint: "https://developer.com/openclaw/dunback"
-  })
+    endpoint: "https://developer.com/openclaw/dunback",
+  }),
 }).listen(3000);
 ```
 
